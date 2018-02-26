@@ -1,3 +1,4 @@
+'use strict'
 module.exports = class Utils {
   static mean(series) {
     const sum = series.reduce((sum, value) => sum + value, 0)

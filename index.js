@@ -1,3 +1,4 @@
+'use strict'
 const Series = require('./src/series')
 
 module.exports = class AnomalyDetection {
@@ -11,7 +12,7 @@ module.exports = class AnomalyDetection {
   }
 
   check(point, confidence) {
-    confidence = confidence || 3
+    confidence = confidence || 3 // 3σ -> 99.73%
     return Math.abs(this.zscore(point)) < (confidence * this.std_dev)
   }
 
